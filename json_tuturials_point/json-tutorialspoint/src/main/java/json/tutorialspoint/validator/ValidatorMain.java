@@ -1,3 +1,4 @@
+package json.tutorialspoint.validator;
 
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import java.io.File;
@@ -14,13 +15,13 @@ public class ValidatorMain {
         // Created and instance to get the class loder
         ValidatorMain obj = new ValidatorMain();
 
-        // Getting the class loader of ValidatorMain to be able to access the resources
+        // Getting the class loader of json.tutorialspoint.validator.ValidatorMain to be able to access the resources
         ClassLoader classLoader = obj.getClass().getClassLoader();
 
         File schemaFile = new File(classLoader.getResource("schema.json").getFile());
         File jsonFile = new File(classLoader.getResource("data.json").getFile());
 
-        // This will produce a report. See ValidationUtils for the Iterator code I added
+        // This will produce a report. See json.tutorialspoint.validator.ValidationUtils for the Iterator code I added
         //File jsonFile = new File(classLoader.getResource("invalid_data.json").getFile());
 
         if (ValidationUtils.isJsonValid(schemaFile, jsonFile)){
